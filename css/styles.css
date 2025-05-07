@@ -293,14 +293,24 @@
  }
 
  .mobile-menu-close {
-     position: absolute;
-     top: 24px;
-     right: 24px;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e7e9fc;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0;
+        cursor: pointer;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
  .menu-nav {
-     width: 151px;
-     margin-bottom: 168px;
+     margin-bottom: auto;
  }
 
  .menu-nav-item {
@@ -329,7 +339,9 @@
      line-height: 1.2;
      letter-spacing: 0.02em;
      color: var(--slate);
-     padding-bottom: 24px;
+ }
+ .menu-contact-item:first-child {
+     margin-bottom: 24px;
  }
 
  .menu-contact-item:hover,
@@ -381,14 +393,12 @@
  /*#region banner*/
  .banner {
      background-color: #2e2f42;
-     width: 320px;
-     height: 432px;
+     max-width: 320px;
      background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/Dark-bg.jpg);
      background-repeat: no-repeat;
      background-size: cover;
-     margin-left: auto;
-     margin-right: auto;
-     padding: 72px 56px;
+     margin: 0 auto;
+     padding: 72px 0;
 
  }
 
@@ -432,8 +442,7 @@
 
  @media (min-width: 768px) {
      .banner {
-         height: 436px;
-         width: 768px;
+         max-width: 768px;
          background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/Dark-bg_tab.jpg);
      }
 
@@ -448,8 +457,7 @@
 
  @media (min-width: 1158px) {
      .banner {
-         height: 600px;
-         width: 1440px;
+         max-width: 1440px;
          padding: 188px 0;
          background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people_office.jpg);
 
@@ -560,13 +568,21 @@
  }
 
  @media (min-width: 1158px) {
+    .features {
+            padding: 120px 0;}                  
      .features_list {
          gap: 24px;
      }
 
      .features_item {
-         width: calc((100% - 72px) / 4);
-        
+         width: calc((100% - 72px) / 4); 
+     }
+     .features_title {
+        font-weight: 500;
+            font-size: 20px;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: var(--navy-blue);
      }
 
      .feature-svg {
@@ -588,9 +604,11 @@
  /*#region team*/
  .team {
      background-color: #f4f4fd;
-     padding: 120px 0;
+     padding: 96px 0;
  }
-
+.team_container {
+    max-width: 296px;
+}
  .team_top_titel {
      font-weight: 700;
      font-size: 36px;
@@ -606,12 +624,12 @@
      flex-direction: column;
      align-items: center;
      gap: 72px;
+   
 
  }
 
  .team_item {
      width: 100%;
-     max-height: 428px;
      border-radius: 0px 0px 4px 4px;
      background-color: #fff;
      box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
@@ -619,12 +637,10 @@
 
  .team_item img {
      display: block;
-     margin: 0 auto;
  }
 
  .item_container {
      padding: 32px 0;
-
  }
 
  .team_titel {
@@ -680,6 +696,9 @@
  }
 
  @media screen and (min-width: 768px) {
+    .team_container {
+            max-width: 584px;
+        }
      .team-list {
          flex-direction: row;
          flex-wrap: wrap;
@@ -693,6 +712,12 @@
  }
 
  @media screen and (min-width: 1158px) {
+    .team {
+        padding: 120px 0;
+    }
+        .team_container {
+            max-width: 1440px;
+        }
      .team-list {
          flex-wrap: nowrap;
          gap: 24px;
@@ -708,8 +733,7 @@
 
  /*#region portfolio*/
  .portfolio {
-     padding-top: 120px;
-     padding-bottom: 120px;
+     padding: 96px 0;
  }
 
  .container-portfolio {
@@ -727,14 +751,10 @@
      margin-bottom: 72px;
  }
 
- .portfolio-img {
-     margin-bottom: 48px;
- }
-
  .app {
-     padding: 32px 16px;
-     width: 288px;
-     height: 120px;
+        padding: 32px 16px;
+        border: 1px solid #e7e9fc;
+        border-top: none;
  }
 
  .portfolio-title {
@@ -755,10 +775,9 @@
 
  @media screen and (min-width: 320px) and (max-width: 767px) {
      .app {
-         border-bottom: 1px solid #e7e9fc;
-         border-left: 1px solid #e7e9fc;
-         border-right: 1px solid #e7e9fc;
-         box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+        border: 1px solid #e7e9fc;
+        border-top: none;
+        box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
              0 1px 1px 0 rgba(46, 47, 66, 0.16),
              0 1px 6px 0 rgba(46, 47, 66, 0.08);
      }
@@ -784,6 +803,9 @@
  }
 
  @media screen and (min-width: 1158px) {
+    .portfolio {
+            padding: 120px 0;
+        }
      .portfolio-list {
          column-gap: 24px;
          row-gap: 48px;
@@ -791,7 +813,17 @@
 
      .portfolio-img {
          width: calc((100% - 48px) / 3);
-         transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+         transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+     .portfolio-img:hover,
+     .portfolio-img:focus {
+                box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+                    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+     }
+     .app {
+            border-bottom: 1px solid #e7e9fc;
+            border-left: 1px solid #e7e9fc;
+            border-right: 1px solid #e7e9fc;
+            
      }
 
      .ovrlay_conteiner {
@@ -861,7 +893,6 @@
      line-height: 1.5;
      letter-spacing: 0.02em;
      color: #fff;
-     margin-bottom: 16px;
      text-align: start;
  }
 
@@ -899,7 +930,6 @@
  }
 
  .footer_form_label {
-     margin-bottom: 16px;
      font-family: "Roboto", sans-serif;
      font-weight: 500;
      font-size: 16px;
@@ -968,9 +998,9 @@
  @media screen and (min-width: 768px) {
      .footer_container {
          justify-content: flex-start;
-         gap: 24px;
+         gap: 72px 24px;
          align-items: baseline;
-         padding-left: 108px;
+         max-width: 584px;
      }
 
      .footer_info {
@@ -1002,8 +1032,6 @@
  @media screen and (min-width: 1158px) {
 
      .footer {
-         width: 1440px;
-         height: 312px;
          margin: 0 auto;
      }
 
@@ -1011,8 +1039,8 @@
          justify-content: space-between;
          align-items: flex-start;
          flex-wrap: nowrap;
-         gap: 24px;
-     }
+         gap: unset;     
+         max-width: 1440px;}
 
      .footer_text {
          font-weight: 400;
@@ -1033,8 +1061,9 @@
          flex-direction: row
      }
  }
-
- /*#backdrop*/
+ /*#endregion footer*/
+ 
+ /*#region backdrop*/
  .backdrop {
      position: fixed;
      top: 0;
@@ -1302,4 +1331,4 @@
      }
  }
 
- /*#endcackdrop*/
+/*#endregion backdrop*/
