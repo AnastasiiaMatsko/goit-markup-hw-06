@@ -399,20 +399,27 @@
      background-size: cover;
      margin: 0 auto;
      padding: 72px 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
 
  }
 
  .banner_container {
-     width: 100%;
-
+     width: 100%; 
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
  }
 
  .banner-titel {
+     max-width: 216px;
      font-weight: 700;
      font-size: 36px;
      line-height: 1.12;
      letter-spacing: 0.02em;
-     text-align: center;
      color: #fff;
      margin-bottom: 72px;
  }
@@ -464,24 +471,24 @@
      }
 
  }
+    @media (min-width: 320px) and (min-resolution: 2x) or (max-width: 767px) and (min-resolution: 2x) {
+    .banner {
+        background-image: linear-gradient(...), url('../images/Dark-bg@2x.jpg');
+    }
+}
 
- @media (min-width: 320px) and (min-resolution: 192dpi) or (max-width: 767px) and (min-resolution: 192dpi) {
-     .banner {
-         background-image: linear-gradient(...), url('../images/Dark-bg@2x.jpg');
-     }
- }
+    @media (min-width: 768px) and (min-resolution: 2x) or (max-width: 1157px) and (min-resolution: 2x) {
+    .banner {
+        background-image: linear-gradient(...), url('../images/Dark-bg_tab@2x.jpg');
+    }
+}
 
- @media (min-width: 768px) and (min-resolution: 192dpi) or (max-width: 1157px) and (min-resolution: 192dpi) {
-     .banner {
-         background-image: linear-gradient(...), url('../images/Dark-bg_tab@2x.jpg');
-     }
- }
+    @media (min-width: 1158px) and (min-resolution: 2x) {
+    .banner {
+        background-image: linear-gradient(...), url('../images/people_office@2x.jpg');
+    }
+}
 
- @media (min-width: 1158px) and (min-resolution: 192dpi) {
-     .banner {
-         background-image: linear-gradient(...), url('../images/people_office@2x.jpg');
-     }
- }
 
  /*#endregion banner*/
 
